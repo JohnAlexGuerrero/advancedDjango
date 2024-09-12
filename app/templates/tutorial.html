@@ -1,0 +1,40 @@
+{% load static %}
+
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>
+        <strong>Template Tags en Django</strong>
+    </h2>
+
+    <h2>Fitro Personalizado</h2>
+
+    
+    <p>{{ description|truncatewords:20}}</p>
+    <p>{{ my_value|date_public:"Publicado el %d de %B de %Y"}}</p>
+    <p>{{ 'ingenieria de sistemas de la universidad cesmag'|upwords}}</p>
+
+
+    <h2>Inclusion Tag</h2>
+    {% category categories %}
+
+    <p>El resultado es: {{ 3498|my_custom_tag}}</p>
+
+    {% for product in products %}
+        {% product_detail product %}
+        <br>
+        <br>
+        <br>
+    {% endfor %}
+</body>
+</html>
+
+
