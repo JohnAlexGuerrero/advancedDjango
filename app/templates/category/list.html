@@ -1,0 +1,7 @@
+<a href="{% url "create_category" %}">crear</a>
+
+{% for object in object_list %}
+    <li>
+        {{ object.name }}
+    </li>
+{% endfor %}
